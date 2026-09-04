@@ -67,9 +67,9 @@ An Android application that scans videos to detect and track unique faces using 
 
 ---
 
-## 🧪 How We Got Here — Experiment Log
+## 🧪 How I Got Here — Experiment Log
 
-We didn't guess these numbers — we tuned them by running Sample 1 (5 known people, ground-truth verified) over and over, watching what broke, and fixing that specific failure.
+I didn't guess these numbers — I tuned them by running Sample 1 (5 known people, ground-truth verified) over and over, watching what broke, and fixing that specific failure.
 
 **Baseline problem:** App found 3 people instead of 5 (counts 6+4+2=12 instead of the correct 20 appearances).
 **Diagnosis:** DBSCAN with `eps=0.4` was chaining — person A connects to B at distance 0.22, B connects to C at 0.15, and so on, until totally different people end up in one cluster through a chain of "close enough" hops.
